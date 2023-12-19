@@ -119,10 +119,10 @@ export default function Home() {
     window.location.href = `https://calendly.com/blackprint-unlimited/30min`
   }
   function handleStripeLogin() {
-    if (env === "production") {
-      window.location.href = `https://billing.stripe.com/p/login/4gw5mD0xQ6ZFczm7ss`
-    } else {
+    if (env === "development") {
       window.location.href = `https://billing.stripe.com/p/login/test_aEUeVfcre4OI8zC4gg`
+    } else {
+      window.location.href = `https://billing.stripe.com/p/login/4gw5mD0xQ6ZFczm7ss`
     }
    
   }

@@ -6,16 +6,7 @@ import {motion, AnimatePresence, useScroll, useAnimation} from 'framer-motion'
 const PackageV2 = ({type, value, plan, onHandleBooking}) => {
     const env = process.env.REACT_APP_ENV
     const handlePayment = (type) => {
-        if (env === "production") {
-            if (type==="startup") {
-                window.location.href = `https://book.stripe.com/cN25kR2FP9MubIscMM`
-            }
-            else if (type==="standard") {
-                window.location.href = `https://buy.stripe.com/7sI8x3fsB2k27scbIK`
-            } else {
-                window.location.href= `https://buy.stripe.com/dR6cNj1BL6AieUE6ou`
-            }
-        } else {
+        if (env === "development") {
             if (type==="startup") {
                 window.location.href = `https://book.stripe.com/test_6oE8wC0Jn03E8dW8wy`
             }
@@ -23,6 +14,16 @@ const PackageV2 = ({type, value, plan, onHandleBooking}) => {
                 window.location.href= `https://buy.stripe.com/test_5kA28efEh7w651K144`
             } else {
                 window.location.href = `https://buy.stripe.com/test_dR6cMS3Vz03EgKs6ou`
+            }
+        } else {
+   
+            if (type==="startup") {
+                window.location.href = `https://book.stripe.com/cN25kR2FP9MubIscMM`
+            }
+            else if (type==="standard") {
+                window.location.href = `https://buy.stripe.com/7sI8x3fsB2k27scbIK`
+            } else {
+                window.location.href= `https://buy.stripe.com/dR6cNj1BL6AieUE6ou`
             }
         }
     }
