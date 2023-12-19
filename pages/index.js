@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/V2.module.scss'
 import style from '../styles/App.module.scss'
+import faqsStyles from '../styles/Faqs.module.scss'
+import packStyles from '../styles/Packages.module.scss'
 import prodStyles from '../styles/Products.module.scss'
 import propStyles from '../styles/Proposition.module.scss'
 import React, {useState, useEffect, useRef} from 'react'
@@ -220,7 +222,7 @@ export default function Home() {
       </Head>
 
 
-      <main className={styles.mainContentV2} id="main" ref={scrollRef}>
+      <main className={styles['main-content-v2']} id="main" ref={scrollRef}>
       { (screenWidth>480)&&
       <Navbar authenticated={isAuthenticated} screenWidth={screenWidth} inView={topInView} bottomInView={bottomInView} isActive={isActive} firstRender={firstRender} onHandleScroll={(id)=>handleButtonClick(id)} onHandleLogin={()=>handleSignIn("login")} onHandlePane={()=>handlePane()}/>
       }
@@ -308,7 +310,7 @@ export default function Home() {
                       BLACK
                   </p>
               
-                  <p className={styles[`hero-text-alt-v2`]}
+                  <p className={[styles[`hero-text-alt-v2`],styles[(screenWidth<480)?"hero-text-alt-symbol":""]].join(' ')}
                   style={{fontSize:"clamp(6px, 4vw, 50px)", border:"none", alignSelf:"center", transform:"translateY(0rem)",lineHeight:"normal"}}>
                   •
                   </p>
@@ -567,25 +569,25 @@ export default function Home() {
 
       { // vector seperator
       (screenWidth>480)&&
-      <div className="proposition-vector-container">
-        <p className="proposition-vector-text">
+      <div className={propStyles["proposition-vector-container"]}>
+        <p className={propStyles["proposition-vector-text"]}>
         "package options"
         </p>
-        <div className="proposition-vector-footer"/>
+        <div className={propStyles["proposition-vector-footer"]}/>
       </div>
       }
       
-      <section className="package-content " id={"packages"}>
-        <div className="proposition-header-container-v2">
-          <p className='proposition-header-text-v2' style={{display:"inline"}}>
+      <section className={"package-content"} id={"packages"}>
+        <div className={styles["proposition-header-container-v2"]}>
+          <p className={styles['proposition-header-text-v2']} style={{display:"inline"}}>
             SO{''}...{' '}WHAT DO WE&nbsp;
           </p>
-          <p className="proposition-header-text-v2" style={{display:"inline", fontWeight:"700"}}>
+          <p className={styles["proposition-header-text-v2"]} style={{display:"inline", fontWeight:"700"}}>
               OFFER?
           </p>
 
         </div>
-        <motion.div className="package-content-container">
+        <motion.div className={packStyles["package-content-container"]}>
           <PackageV2 type={'standard'} value={500} plan={'month'} onHandleBooking={()=>(screenWidth>480)?handleBooking():navigateBooking()}/>
           <PackageV2 type={'pro'} value={600} plan={'month'} onHandleBooking={()=>(screenWidth>480)?handleBooking():navigateBooking()}/>
           <PackageV2 type={'startup'} value={300} plan={'once'} onHandleBooking={()=>(screenWidth>480)?handleBooking():navigateBooking()}/>
@@ -602,7 +604,7 @@ export default function Home() {
         duration:.15
       }}
         className='faqs-content' id="faqs">
-        <motion.div className='faqs-content-container '
+        <motion.div className={faqsStyles['faqs-content-container']}
         initial={{opacity:0, y:50}}
         viewport={{once:true}}
         exit={{opacity:0,
@@ -619,10 +621,10 @@ export default function Home() {
           damping:30,
           duration:.2
         }}>
-          <div className='faqs-header-text'>
+          <div className={faqsStyles['faqs-header-text']}>
           faqs
           </div>
-          <ul className='faqs-content-list '>
+          <ul className={faqsStyles['faqs-content-list']}>
             <Faqs topic={"why blackprint?"} index={0} info={
               `Less stress, work done faster, transform your ideas into reality.\n`+
               `With 3 workers under your belt, we are versed in Video Editing,\n`+
@@ -630,7 +632,7 @@ export default function Home() {
               screenWidth={screenWidth}
               onHandleClose={(val)=>setOpenCount(openCount.filter((item)=>item!==val))}
               onHandleOpen={(val)=>setOpenCount([...openCount, val])}/>
-            <div className='faqs-item-border'/>
+            <div className={faqsStyles['faqs-item-border']}/>
             <Faqs topic={"can't i just hire a full-time designer?"} index={1}
             info={`The average designer is paid around +$100,000. \n`+
             `Save up to 95.2% of this cost when purchasing the standard plan. \n`+
@@ -638,62 +640,63 @@ export default function Home() {
             screenWidth={screenWidth}
             onHandleClose={(val)=>setOpenCount(openCount.filter((item)=>item!==val))}
             onHandleOpen={(val)=>setOpenCount([...openCount, val])}/>
-            <div className='faqs-item-border'/>
+            <div className={faqsStyles['faqs-item-border']}/>
             <Faqs topic={"who are the designers?"} index={2}
             info={`3 designers who are passionate about design. We’ve worked with\n`+
             `clothing brands, event companies, developed mobile apps, and more!`}
             screenWidth={screenWidth}
             onHandleClose={(val)=>setOpenCount(openCount.filter((item)=>item!==val))}
             onHandleOpen={(val)=>setOpenCount([...openCount, val])}/>
-            <div className='faqs-item-border'/>
+            <div className={faqsStyles['faqs-item-border']}/>
             <Faqs topic={"are there any refunds?"} index={3} info={`Unfortunately, due to the nature of these projects, refunds are not offered.`}
             screenWidth={screenWidth}
             onHandleClose={(val)=>setOpenCount(openCount.filter((item)=>item!==val))}
             onHandleOpen={(val)=>setOpenCount([...openCount, val])}/>
-            <div className='faqs-item-border'/>
+            <div className={faqsStyles['faqs-item-border']}/>
             <Faqs topic={"What if i dont like the design?"} index={4}
             info={`We’ll continue to revise the design until you’re 100% satisfied!`}
             screenWidth={screenWidth}
             onHandleClose={(val)=>setOpenCount(openCount.filter((item)=>item!==val))}
             onHandleOpen={(val)=>setOpenCount([...openCount, val])}/>
-            <div className='faqs-item-border'/>
+            <div className={faqsStyles['faqs-item-border']}/>
           </ul>
         </motion.div>
       </motion.section>
       {
-      <section className='footer-content'>
+      <section className={styles['footer-content']}>
 
         <div style={{display:"flex"}}>
           {(screenWidth>480)&&
-            <div className='footer-star-container-v2'>
-                <div className='green-star-lower-alt'/>
-                <div className='green-star-upper-alt'/>
+            <div className={styles['footer-star-container-v2']}>
+                <div className={styles['green-star-lower-alt']}/>
+                <div className={styles['green-star-upper-alt']}/>
             </div>
           }
-            <div style={{display:"flex", gap:(screenWidth>480)?".65rem":"1.5rem", flexDirection:"column", justifyContent:"center", alignItems:"center"}} className="footer-text-container">
+            <div style={{display:"flex", gap:(screenWidth>480)?".65rem":"1.5rem", flexDirection:"column", justifyContent:"center", alignItems:"center"}} 
+            className={styles["footer-text-container"]}>
    
-              <div style={{display:(screenWidth>480)?"flex":"block"}} className="footer-header-wrapper">
-                <div className='footer-content-text' style={{display:"inline"}}>
+              <div style={{display:(screenWidth>480)?"flex":"block"}} className={styles["footer-header-wrapper"]}>
+                <div className={styles['footer-content-text']} style={{display:"inline"}}>
                 see if blackprint is for you&nbsp;
                 </div>
-                <div className='footer-content-text' style={{display:"inline",borderBottom:"1px solid rgba(82, 255, 0, 0.50)"}}>
+                <div className={styles['footer-content-text']} style={{display:"inline",borderBottom:"1px solid rgba(82, 255, 0, 0.50)"}}>
                 today!
                 </div>
 
               </div>
-              <p className='footer-content-subtext' style={{zIndex:"1"}}>
+              <p className={styles['footer-content-subtext']} style={{zIndex:"1"}}>
               Take the first step into turning your idea into reality. 
               </p>
             </div>
           {(screenWidth>480)&&
-            <div className='footer-star-container-alt-v2'>
-              <div className='green-star-lower-alt'/>
-              <div className='green-star-upper-alt'/>
+            <div className={styles['footer-star-container-alt-v2']}>
+              <div className={styles['green-star-lower-alt']}/>
+              <div className={styles['green-star-upper-alt']}/>
             </div>
         }
         </div>
-          <span className='footer-booking-button-v2 ' onClick={()=>navigateBooking()}>
-              <div className='footer-booking-icon' >
+          <span className={styles['footer-booking-button-v2']} onClick={()=>navigateBooking()}>
+              <div className={styles['footer-booking-icon']}>
                 {(screenWidth>480)&&
                 <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 40 40" fill="none">
                   <g filter="url(#filter0_d_326_811)">
@@ -709,115 +712,111 @@ export default function Home() {
                 }
               </div>
               <div style={{display:"flex"}}>
-                <p className='footer-booking-text'>
+                <p className={styles['footer-booking-text']}>
                     {`Book a demo |`}&nbsp;
                 </p>
-                <p className='footer-booking-text queue-number'>
+                <p className={[styles['footer-booking-text'], styles['queue-number']].join(' ')}>
                     {`10 `}
                 </p>
-                <p className='footer-booking-text' style={{ paddingRight: ".875rem"}}>
+                <p className={styles['footer-booking-text']} style={{ paddingRight: ".875rem"}}>
                     &nbsp;{`spots left`}
                 </p>
               </div>
            
           </span>
           {(screenWidth<=480)&&
-          <div className='footer-bottom-content'>
+          <div className={styles['footer-bottom-content']}>
               <div style={{ 
             zIndex:"1",display:"flex",gap:".5rem",marginRight:"auto"}}>
-                <p className="footer-logo-text" style={{paddingLeft:"0.0em"}}>
+                <p className={styles["footer-logo-text"]} style={{paddingLeft:"0.0em"}}>
                   BLACK
                 </p>
-                <p className="footer-logo-text"
+                <p className={styles["footer-logo-text"]}
                 style={{fontSize:"clamp(12px, 4vw, 18px)", lineHeight:"23px"}}>
                   •
                 </p>
-                <p className="footer-logo-text">
+                <p className={styles["footer-logo-text"]}>
                   PRINT
                 </p>
-                <span className="footer-text-icon"/>
+                <span className={styles["footer-text-icon"]}/>
             </div>
             <div style={{display:"flex", alignSelf:"flex-start", paddingLeft:"0rem", paddingTop:".375rem" }} ref={bottomRef} >
-                <p className='timestamp-footer'>
+                <p className={styles['timestamp-footer']}>
                   © 2023
                 </p>
             </div>
 
-            <div className='footer-links-container'>
-              <div className='footer-links-column'>
+            <div className={styles['footer-links-container']}>
+              <div className={styles['footer-links-column']}>
 
-                  <span className='footer-links-text' onClick={()=>handleButtonClick("catalog")}>
+                  <span className={styles['footer-links-text']} onClick={()=>handleButtonClick("catalog")}>
                     Recent Work
                   </span>
-                  <span className='footer-links-text' onClick={()=>handleButtonClick("packages")}>
+                  <span className={styles['footer-links-text']} onClick={()=>handleButtonClick("packages")}>
                     Pricing
                   </span>
-                  <span className='footer-links-text' onClick={()=>handleButtonClick("faqs")}>
+                  <span className={styles['footer-links-text']} onClick={()=>handleButtonClick("faqs")}>
                     FAQ
                   </span>
        
               </div>
-              <div className='footer-links-column'>
-              <span className='footer-links-text' onClick={()=>handleStripeLogin()}>
+              <div className={styles['footer-links-column']}>
+              <span className={styles['footer-links-text']} onClick={()=>handleStripeLogin()}>
                     Client Login
                   </span>
-                <span className='footer-links-text' onClick={()=>handleNavigate("terms")}>
+                <span className={styles['footer-links-text']} onClick={()=>handleNavigate("terms")}>
                     Terms {'&'} Conditions
                 </span>
-                <span className='footer-links-text' onClick={()=>handleNavigate("privacy")}>
+                <span className={styles['footer-links-text']} onClick={()=>handleNavigate("privacy")}>
                     Privacy Policy
                 </span>
               </div>
           </div>
 
           <div style={{position:"relative",  backgroundColor: "#040F08", marginRight:"auto", userSelect:"none"}}>
-          <div className='thumbprint-bottom-left' style={{ bottom:"0vh",zIndex:0}}>
-
+            <div className={styles['thumbprint-bottom-left']} style={{ bottom:"0vh",zIndex:0}}>
+            </div>
           </div>
         </div>
+        }
 
-
-          </div>
-          }
-
-      
       </section>
     }
  {(screenWidth>480)&&<>
         <div style={{ transform:"translateY(2.125rem) translateX(6.2rem)",
             zIndex:"1",display:"flex", gap:".5rem",marginRight:"auto"}}>
-              <p className="footer-logo-text" style={{paddingLeft:".9em"}}>
+              <p className={styles["footer-logo-text"]} style={{paddingLeft:".9em"}}>
                 BLACK
               </p>
-              <p className="footer-logo-text"
+              <p className={styles["footer-logo-text"]} 
               style={{fontSize:"clamp(6px, 4vw, 16px)", lineHeight:"24px"}}>
                 •
               </p>
-              <p className="footer-logo-text">
+              <p className={styles["footer-logo-text"]}>
                 PRINT
               </p>
-              <span className="footer-text-icon"/>
+              <span className={styles["footer-text-icon"]}/>
         </div>
-        <div className='footer-links-container '>
-            <div className='footer-links-column'>
-                <span className='footer-links-text' onClick={()=>handleButtonClick("catalog")}>
+        <div className={styles['footer-links-container']}>
+            <div className={styles['footer-links-column']}>
+                <span className={styles['footer-links-text']} onClick={()=>handleButtonClick("catalog")}>
                   Recent Work
                 </span>
-                <span className='footer-links-text' onClick={()=>handleButtonClick("packages")}>
+                <span className={styles['footer-links-text']} onClick={()=>handleButtonClick("packages")}>
                   Pricing
                 </span>
-                <span className='footer-links-text' onClick={()=>handleButtonClick("faqs")}>
+                <span className={styles['footer-links-text']} onClick={()=>handleButtonClick("faqs")}>
                   FAQ
                 </span>
             </div>
-            <div className='footer-links-column'>
-              <span className='footer-links-text' onClick={()=>handleStripeLogin()}>
+            <div className={styles['footer-links-column']}>
+              <span className={styles['footer-links-text']} onClick={()=>handleStripeLogin()}>
                   Client Login
               </span>
-              <span className='footer-links-text' onClick={()=>handleNavigate("terms")}>
+              <span className={styles['footer-links-text']} onClick={()=>handleNavigate("terms")}>
                   Terms {'&'} Conditions
               </span>
-              <span className='footer-links-text' onClick={()=>handleNavigate("privacy")}>
+              <span className={styles['footer-links-text']} onClick={()=>handleNavigate("privacy")}>
                   Privacy Policy
               </span>
             </div>
@@ -826,7 +825,7 @@ export default function Home() {
         }
         {(screenWidth>480)&&
         <div style={{display:"flex", alignSelf:"flex-start", paddingLeft:(screenWidth>480)?"7.5rem":"2rem", transform:(screenWidth>480)?"translateY(-3.125rem)":"translateY(-6rem)"}} ref={bottomRef} >
-            <p className='timestamp-footer'>
+            <p className={styles['timestamp-footer']}>
               © 2023
             </p>
         </div>
@@ -839,22 +838,22 @@ export default function Home() {
 
 
       <div style={{position:"relative", backgroundColor: "#040F08", userSelect:"none"}}>
-          <div className='thumbprint-bottom-right' style={{bottom:"0vh", right:"0vw",zIndex:0}}>
+          <div className={styles['thumbprint-bottom-right']} style={{bottom:"0vh", right:"0vw",zIndex:0}}>
 
           </div>
         </div>
         <div style={{position:"relative",  backgroundColor: "#040F08", marginRight:"auto", userSelect:"none"}}>
-          <div className='thumbprint-bottom-left' style={{ bottom:"0vh",zIndex:0}}>
+          <div className={styles['thumbprint-bottom-left']} style={{ bottom:"0vh",zIndex:0}}>
 
           </div>
         </div>
         <div style={{position:"relative",  backgroundColor: "#040F08", marginRight:"auto", userSelect:"none"}}>
-          <div className='thumbprint-top-left' style={{top:"-38.5rem",zIndex:0}}>
+          <div className={styles['thumbprint-top-left']} style={{top:"-38.5rem",zIndex:0}}>
 
           </div>
         </div>
         <div style={{position:"relative",  backgroundColor: "#040F08", mixBlendMode:"overlay"}}>
-          <div className='thumbprint-top-right' style={{top:"-37.75rem", right:"0vw",zIndex:0}}>
+          <div className={styles['thumbprint-top-right']} style={{top:"-37.75rem", right:"0vw",zIndex:0}}>
 
           </div>
         </div>

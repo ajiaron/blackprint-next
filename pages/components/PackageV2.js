@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
-import '../../styles/Packages.module.scss'
+import styles from '../../styles/Packages.module.scss'
 import Button from './Button';
 import {motion, AnimatePresence, useScroll, useAnimation} from 'framer-motion'
 
@@ -27,7 +27,7 @@ const PackageV2 = ({type, value, plan, onHandleBooking}) => {
         }
     }
     return (
-        <div className='package-wrapper-v2  '>
+        <div className={styles['package-wrapper-v2']}>
             <motion.div 
             viewport={{ once: true }}
             initial={{opacity:0, y:64}}
@@ -46,14 +46,14 @@ const PackageV2 = ({type, value, plan, onHandleBooking}) => {
                 damping:30,
                 duration:.25
             }}
-            className='package-container-v2'>
-                <div className='package-header-container-v2'>
+            className={styles['package-container-v2']}>
+                <div className={styles['package-header-container-v2']}>
                     <div style={{display:"flex"}}>
                     {(type==="standard")?
-                        <div className='package-standard-icon-v2'/>:(type==="pro")?
-                        <div className='package-pro-icon-v2'/>:null
+                        <div className={styles['package-standard-icon-v2']}/>:(type==="pro")?
+                        <div className={styles['package-pro-icon-v2']}/>:null
                     }
-                        <p className='package-header-v2' 
+                        <p className={styles['package-header-v2']}
                         style={{textShadow: (type==="startup")?
                             "-5px 1px 23px rgba(255, 255, 255, 0.70)":"none",
                             paddingRight:(type==="standard")?"1.75rem":"0rem"
@@ -61,55 +61,55 @@ const PackageV2 = ({type, value, plan, onHandleBooking}) => {
                             {(type==="startup")?'brand start-up':type}
                         </p>
                         {(type==="pro")?
-                        <div className='package-pro-icon-alt-v2'/>:
+                        <div className={styles['package-pro-icon-alt-v2']}/>:
                         (type==="startup")?
-                        <div className='package-startup-label-v2'>
-                            <div className='package-startup-label-text-v2'>
+                        <div className={styles['package-startup-label-v2']}>
+                            <div className={styles['package-startup-label-text-v2']}>
                                 most popular!
                             </div>
                         </div>:null
                         }
                     </div>
-                    <p className='package-listing-header-v2'>
+                    <p className={styles['package-listing-header-v2']}>
                         {`$${value}${plan==='once'?' once':'/'+plan}`}
                     </p>
                 </div>
 
-                <div className='package-listing-wrapper-v2'>
+                <div className={styles['package-listing-wrapper-v2']}>
                 
-                    <ul className='package-listing-container ' >
-                        <li className='package-listing-item-v2' >
+                    <ul className={styles['package-listing-container']} >
+                        <li className={styles['package-listing-item-v2']}>
                             {(type==="startup")?'Branding call':
                             `${type==='pro'?'Two requests':'One request'} at a time`
                             }
                         </li>
-                        <li className='package-listing-item-v2'>
+                        <li className={styles['package-listing-item-v2']}>
                             {
                             `Unlimited design via catalog`
                             }
                         </li>
-                        <li className='package-listing-item-v2'>
+                        <li className={styles['package-listing-item-v2']}>
                             {
                             `Unlimited Stock photos`
                             }
                         </li>
-                        <li className='package-listing-item-v2'>
+                        <li className={styles['package-listing-item-v2']}>
                             {
                             `Targeted niche research`
                             }
                         </li>
-                        <li className='package-listing-item-v2'>
+                        <li className={styles['package-listing-item-v2']}>
                             {
                             `Website Maintenance`
                             }
                         </li>
-                        <li className='package-listing-item-v2' 
+                        <li className={styles['package-listing-item-v2']}
                         style={{fontWeight:700}}>
                             {(type==="startup")?'Guaranteed ready brand':
                             `Cancel any time`
                             }
                         </li>
-                        <li className='package-listing-item-v2' 
+                        <li className={styles['package-listing-item-v2']}
                         style={{fontWeight:700}}>
                             {
                             `Average 48 hour delivery`
@@ -118,7 +118,7 @@ const PackageV2 = ({type, value, plan, onHandleBooking}) => {
                     </ul>
                 </div>
             </motion.div>
-            <div className='package-button-container'>
+            <div className={styles['package-button-container']}>
                 <Button type="booking" 
                  onHandlePayment={()=>handlePayment(type)}
                  onHandleBooking={()=>onHandleBooking()}/>

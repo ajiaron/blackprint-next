@@ -26,22 +26,15 @@
     margin-right: auto;
 }
 .faqs-item-border {
-
-
     width: auto;
-
     background-color: #eee;
-        /* dashed border */
-        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='4' stroke-dasharray='2%2c10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
-     
-    
-
+    /* dashed border */
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='4' stroke-dasharray='2%2c10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); 
     width: 58.5rem;
     min-width: 52.5rem;
     height: 1px;
     //background-color: red;
     align-self: flex-end;
-
 }
 .faqs-content-list {
     padding: 0%;
