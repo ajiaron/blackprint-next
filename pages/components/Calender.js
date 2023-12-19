@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {motion, AnimatePresence, useScroll, useAnimation, inView} from 'framer-motion'
-
+import styles from '../../styles/Calender.module.scss'
 const Calender = ({ onClose, onBlur }) => {
     const modalRef = useRef(null);
     const handleOutsideClick = (event) => {
@@ -35,14 +35,14 @@ const Calender = ({ onClose, onBlur }) => {
           damping:30,
           duration:.2
         }}
-        className='calender-content-container '>
-            <div className='iframe-cover'>
+        className={styles['calender-content-container']}>
+            <div className={styles['iframe-cover']}>
 
             </div>
             {
       
           <iframe 
-     
+            className={styles["calender"]}
             title="calendly"
             src="https://calendly.com/blackprint-unlimited/30min"
             width="100%"
