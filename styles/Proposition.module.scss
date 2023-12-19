@@ -72,12 +72,14 @@
 
 }
 .proposition-value-icon {
-    width: 4.6875rem;
-    height: 4.6875rem;
+    min-width: 4.6875rem;
+    min-height: 4.6875rem;
+    max-width: 4.6875rem;
+    max-height: 4.6875rem;
     stroke-width: 5px;
     stroke: #FFF;
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
+  //  background-position: center;
     background-repeat: no-repeat;
     box-sizing: border-box;
 }

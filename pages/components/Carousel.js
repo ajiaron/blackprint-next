@@ -1,16 +1,16 @@
 import React, {useState, useEffect, useRef} from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import '../../styles/Carousel.module.scss'
+import styles from '../../styles/Carousel.module.scss'
 
 const renderIcons = () => (
-    <div className='carousel-icon-wrapper'>
-        <div className='carousel-icon-container circleoc-icon' />
-        <div className='carousel-icon-container nebula-icon' />
-        <div className='carousel-icon-container dashbill-icon' />
-        <div className='carousel-icon-container ksig-icon' />
-        <div className='carousel-icon-container peaking-duck-icon' />
-        <div className='carousel-icon-container legacy-icon' />
-        <div className='carousel-icon-container noservice-icon'>
+    <div className={styles['carousel-icon-wrapper']}>
+        <div className={[styles['carousel-icon-container'], styles['circleoc-icon']].join(' ')} />
+        <div className={[styles['carousel-icon-container'], styles['nebula-icon']].join(' ')} />
+        <div className={[styles['carousel-icon-container'], styles['dashbill-icon']].join(' ')} />
+        <div className={[styles['carousel-icon-container'], styles['ksig-icon']].join(' ')} />
+        <div className={[styles['carousel-icon-container'], styles['peaking-duck-icon']].join(' ')} />
+        <div className={[styles['carousel-icon-container'], styles['legacy-icon']].join(' ')} />
+        <div className={[styles['carousel-icon-container'], styles['noservice-icon']].join(' ')}>
             NO SERVICE*
         </div>
     </div>
@@ -32,12 +32,12 @@ const Carousel = ({screenWidth}) => {
     }, [controls]);
 
     return (
-        <div className='carousel-container'>
+        <div className={styles['carousel-container']}>
 
             <motion.div 
             initial={{ x: 0 }}
             animate={controls}
-            className='carousel-content-container'>
+            className={styles['carousel-content-container']}>
               {renderIcons()}
               {renderIcons()}
             </motion.div>

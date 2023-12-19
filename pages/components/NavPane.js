@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import '../../styles/Navbar.module.scss'
+import styles from '../../styles/Navbar.module.scss'
 import {Link, useNavigate} from 'react-router-dom'
 import { FaBars } from "react-icons/fa";
 import {motion, AnimatePresence, useScroll, useAnimation, inView} from 'framer-motion'
@@ -31,22 +31,22 @@ const NavPane = ({authenticated, screenWidth, inView, bottomInView, isActive, fi
           damping:30,
           duration:.1
         }}
-         className={`navigation-pane-container`}>
-            <div className='navigation-pane-content-container'>
+         className={styles[`navigation-pane-container`]}>
+            <div className={styles['navigation-pane-content-container']}>
                     <span style={{pointerEvents:(isActive)?"auto":"none"}}
-                    className={`navbar-item-container`} onClick={()=>handleNavigate("catalog")}>
+                    className={styles[`navbar-item-container`]} onClick={()=>handleNavigate("catalog")}>
                         Recent Work
                     </span>
                     <span style={{pointerEvents:(isActive)?"auto":"none"}}
-                    className={`navbar-item-container`} onClick={()=>handleNavigate("products")}>
+                    className={styles[`navbar-item-container`]} onClick={()=>handleNavigate("products")}>
                         Catalog
                     </span>
                     <span style={{pointerEvents:(isActive)?"auto":"none"}}
-                    className={`navbar-item-container `} onClick={()=>handleNavigate("faqs")}>
+                    className={styles[`navbar-item-container`]} onClick={()=>handleNavigate("faqs")}>
                         FAQ's
                     </span>
                     <span style={{pointerEvents:(isActive)?"auto":"none"}}
-                    className={`navbar-item-container`} onClick={()=>handleNavigate("packages")}>
+                    className={styles[`navbar-item-container`]} onClick={()=>handleNavigate("packages")}>
                         Pricing
                     </span>
 
@@ -57,7 +57,7 @@ const NavPane = ({authenticated, screenWidth, inView, bottomInView, isActive, fi
                     </span>
                     */}
                     <span style={{pointerEvents:(isActive)?"auto":"none"}}
-                    className={`navbar-item-container`} onClick={()=>handleStripeLogin()}>
+                    className={styles[`navbar-item-container`]} onClick={()=>handleStripeLogin()}>
                        Login
                     </span>
      

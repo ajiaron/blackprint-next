@@ -11,28 +11,28 @@ src: url('../public/fonts/Gardenia Summer.ttf') format('truetype');
 
 html,
 body {
-  width: 100vw;
-  height: 100vh;
-  
-  padding: 0;
-
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Inter', 'Helvetica Neue',
+    sans-serif, 'Baunk', 'Gardenia Summer';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*background-color: #040F08;*/
+  background-color: #0C0706;
+  /*background-color: #121212;*/
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
+
 p {
   margin: 0;
+  z-index: 999;
   padding: 0;
 }
 
-* {
-  box-sizing: border-box;
-}
 
 
 
@@ -221,7 +221,7 @@ p {
 
 }
 .hero-text {
-  color: #fefefe;
+  color: #fff;
   text-align: center;
   text-shadow: -4px 2px 22px rgba(255, 255, 255, 0.70);
   font-family: Helvetica Neue;

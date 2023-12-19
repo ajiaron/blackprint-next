@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/V2.module.scss'
 import style from '../styles/App.module.scss'
+import prodStyles from '../styles/Products.module.scss'
+import propStyles from '../styles/Proposition.module.scss'
 import React, {useState, useEffect, useRef} from 'react'
 import Navbar from './components/Navbar';
 import Catalog from './components/Catalog';
@@ -21,7 +23,14 @@ import lightningLottie from './components/data/lightningLottie.json';
 export default function Home() {
   const scrollRef = useRef(null)
   const env = process.env.REACT_APP_ENV
-  const [screenWidth, setScreenWidth] = useState(0);
+  const [screenWidth, setScreenWidth] = useState(() => {
+    if (typeof window !== 'undefined') {
+      // Client-side, window is available
+      return window.innerWidth;
+    } else {
+      return 1024; // or whatever default value you deem appropriate
+    }
+  });
   const [screenHeight, setScreenHeight] = useState(0);
   const [signInActive, setSignInActive] = useState(null)
   const [firstRender, setFirstRender] = useState(true)
@@ -335,32 +344,32 @@ export default function Home() {
 
       { // vector seperator
       (screenWidth>480)&&
-      <div className="hero-vector-container-v2 ">
-        <div className="hero-vector-top-v2"/>
+      <div className={styles["hero-vector-container-v2"]}>
+        <div className={styles["hero-vector-top-v2"]}/>
         
       </div>
       }
-      <section className="proposition-content" id={"proposition"}>
-        <div className="proposition-header ">
-          <div className="proposition-header-container-v2">
-            <p className="proposition-header-text-v2"  style={{display:"inline", fontWeight:"400"}}>
+      <section className={"proposition-content"} id={"proposition"}>
+        <div className={propStyles["proposition-header"]}>
+          <div className={styles["proposition-header-container-v2"]}>
+            <p className={styles["proposition-header-text-v2"]}  style={{display:"inline", fontWeight:"400"}}>
               TURN YOUR IDEAS TO&nbsp;
             </p>
-            <p className="proposition-header-text-v2" style={{display:"inline", fontWeight:"700"}}>
+            <p className={styles["proposition-header-text-v2"]} style={{display:"inline", fontWeight:"700"}}>
               REALITY
             </p>
           </div>
 
-          <p className="proposition-header-subtext-v2">
+          <p className={styles["proposition-header-subtext-v2"]}>
             Designs catered to your vision that you can trust.
             </p>
         
         </div>
-        <div className="proposition-content-container-v2">
-          <div className="proposition-value-text-container-v2 ">
-            <div className=" proposition-value-text-wrapper" style={{transform:(screenWidth>480)?"translateX(-.75rem)":"translateX(0)"}}>
+        <div className={styles["proposition-content-container-v2"]}>
+          <div className={styles["proposition-value-text-container-v2"]}>
+            <div className={propStyles["proposition-value-text-wrapper"]} style={{transform:(screenWidth>480)?"translateX(-.75rem)":"translateX(0)"}}>
         
-              <span className="lightning-container"
+              <span className={styles["lightning-container"]}
                   onMouseEnter={() => setHovered("lightning")}
                   onMouseLeave={() => setHovered(null)}>
                     {/*
@@ -368,7 +377,7 @@ export default function Home() {
                                   <motion.div className="proposition-value-icon lightning-icon"/>     
                      */}
                 
-                  <div className='proposition-value-icon-v3 lightning-icon-v2'>
+                  <div className={[styles["proposition-value-icon-v3"],styles["lightning-icon-v2"]].join(' ')}>
                   
                     {View}
                
@@ -390,25 +399,25 @@ export default function Home() {
                       repeatType:"loop",
                       repeatDelay:1.25
                     }}
-                    className="proposition-value-icon lightning-star-icon"/>
+                    className={[,styles["lightning-star-icon"]].join(' ')}/>
 
                   
                 </span>
-                <div className="proposition-value-text">
+                <div className={propStyles["proposition-value-text"]}>
                   lighting fast delivery
                 </div>
                 <div style={{maxWidth:"22.75rem"}}>
-                  <p className="proposition-value-subtext">
+                  <p className={propStyles["proposition-value-subtext"]}>
                     we'll always update you<br/> on our progress.&nbsp;
                   </p>
-                  <p className="proposition-value-subtext" style={{display:"inline", fontWeight:"700"}}>
+                  <p className={propStyles["proposition-value-subtext"]} style={{display:"inline", fontWeight:"700"}}>
                     full transparency.
                   </p>
                 </div>
               </div>
-              <div className="proposition-value-text-wrapper" style={{transform:(screenWidth>480)?"translateX(.25rem)":"translateX(0)"}}>
+              <div className={propStyles["proposition-value-text-wrapper"]} style={{transform:(screenWidth>480)?"translateX(.25rem)":"translateX(0)"}}>
               
-                <motion.span className="arrow-loop-container"
+                <motion.span className={styles["arrow-loop-container"]}
               
                   >
                   <motion.div 
@@ -425,7 +434,8 @@ export default function Home() {
                       repeatType:"reverse",
                       repeatDelay:1.25
                     }}
-                  className="proposition-value-icon top-arrow-v2"/>
+                    className={[propStyles["proposition-value-icon"],styles["top-arrow-v2"]].join(' ')}
+                  />
                   <motion.div 
                     initial={{x:-37.5, rotate:180}}
                     viewport={{once:true}}
@@ -440,25 +450,26 @@ export default function Home() {
                       repeatType:"reverse",
                       repeatDelay:1.25
                     }}
-                  className="proposition-value-icon bottom-arrow-v2"/>
+                    className={[propStyles["proposition-value-icon"], styles["bottom-arrow-v2"]].join(' ')}
+                    />
                 </motion.span>
-                <div className="proposition-value-text" style={{transform:"translateX(0rem)"}}>
+                <div className={propStyles["proposition-value-text"]} style={{transform:"translateX(0rem)"}}>
                 revise to satisfaction
                 </div>
                 <div style={(screenWidth>480)?{maxWidth:"22.75rem",transform:"translateX(.125rem)"}:{}}>
-                  <p className="proposition-value-subtext" style={{display:"inline"}}>
+                  <p className={propStyles["proposition-value-subtext"]} style={{display:"inline"}}>
                   we'll revise until you're<br/>
                   </p>
-                  <p className="proposition-value-subtext" style={{display:"inline", fontWeight:"700"}}>
+                  <p className={propStyles["proposition-value-subtext"]} style={{display:"inline", fontWeight:"700"}}>
                   100%
                   </p>
-                  <p className="proposition-value-subtext">
+                  <p className={propStyles["proposition-value-subtext"]}>
                   &nbsp;satisfied with the <br/>design.
                   </p>
                 </div>
               </div>
-              <div className="proposition-value-text-wrapper" style={{transform:(screenWidth>480)?"translateX(1.25rem)":"translateX(0)"}}>
-                <span className="dap-container">
+              <div className={propStyles["proposition-value-text-wrapper"]} style={{transform:(screenWidth>480)?"translateX(1.25rem)":"translateX(0)"}}>
+                <span className={styles["dap-container"]}>
                   <motion.div 
                     initial={{ x:20, rotate:0}}
                     //viewport={{once:true}}
@@ -473,7 +484,7 @@ export default function Home() {
                       repeatType:"reverse",
                       repeatDelay:1
                     }}
-                  className="proposition-value-icon lefthand"/>
+                    className={[propStyles["proposition-value-icon"],styles["lefthand"]].join(' ')}/>
                   <motion.div 
                     initial={{x:-20,rotate:0}}
                   // viewport={{once:true}}
@@ -488,19 +499,19 @@ export default function Home() {
                       repeatType:"reverse",
                       repeatDelay:1
                     }}
-                  className="proposition-value-icon righthand"/>
+                  className={[propStyles["proposition-value-icon"],styles["righthand"]].join(' ')}/>
                 </span>
 
 
                 
-                <div className="proposition-value-text">
+                <div className={propStyles["proposition-value-text"]}>
                   catered to <br/>your needs
                 </div>
                 <div style={{maxWidth:"22.75rem"}}>
-                  <p className="proposition-value-subtext">
+                  <p className={propStyles["proposition-value-subtext"]}>
                   we'll replicate any <br/>references, design around <br/>your vision.
                 </p>
-                <p className="proposition-value-subtext" style={{display:"inline", fontWeight:"700",}}>
+                <p className={propStyles["proposition-value-subtext"]} style={{display:"inline", fontWeight:"700",}}>
 
                 </p>
               </div>
@@ -509,34 +520,34 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='products-content ' id="products">
-        <div className='products-content-container'>
-          <div className='products-header-container '>
+      <section className={'products-content'} id="products">
+        <div className={prodStyles['products-content-container']}>
+          <div className={prodStyles['products-header-container']}>
             {(screenWidth>480)&&
-            <div className='green-star-container '>
-              <div className='green-star-lower'/>
-              <div className='green-star-upper'/>
+            <div className={styles['green-star-container']}>
+              <div className={styles['green-star-lower']}/>
+              <div className={styles['green-star-upper']}/>
             </div>
           }
             {(screenWidth>480)?
             <>
-            <p className="proposition-header-text-v2 product-header"  style={{display:"inline", fontWeight:"400"}}>
+            <p className={[styles["proposition-header-text-v2"], prodStyles["product-header"]].join(' ')} style={{display:"inline", fontWeight:"400"}}>
               LOGOS, FLYERS, WEBSITES {'&'}&nbsp;
             </p>
-            <p className="proposition-header-text-v2 product-header" style={{display:"inline", fontWeight:"700"}}>
+            <p className={[styles["proposition-header-text-v2"], prodStyles["product-header"]].join(' ')} style={{display:"inline", fontWeight:"700"}}>
               MORE
             </p>
             </>
             :
             <>
-            <p className="proposition-header-text-v2 product-header"  style={{display:"inline", fontWeight:"400", paddingLeft:".25rem"}}>
+            <p className={[styles["proposition-header-text-v2"], prodStyles["product-header"]].join(' ')}  style={{display:"inline", fontWeight:"400", paddingLeft:".25rem"}}>
               LOGOS, FLYERS,
             </p>
             <div style={{display:"flex"}}>
-            <p className="proposition-header-text-v2 product-header" style={{display:"inline", fontWeight:"400", whiteSpace:"nowrap"}}>
+            <p className={[styles["proposition-header-text-v2"], prodStyles["product-header"]].join(' ')} style={{display:"inline", fontWeight:"400", whiteSpace:"nowrap"}}>
               WEBSITES {'&'}&nbsp;
             </p>
-            <p className="proposition-header-text-v2 product-header" style={{display:"inline", fontWeight:"700", transform:"translateY(-.075rem)"}}>
+            <p className={[styles["proposition-header-text-v2"], prodStyles["product-header"]].join(' ')} style={{display:"inline", fontWeight:"700", transform:"translateY(-.075rem)"}}>
                MORE
             </p>
             </div>
@@ -546,9 +557,9 @@ export default function Home() {
           </div>
 
           <Products/>
-          <div className='footer-star-container'>
-              <div className='green-star-lower'/>
-              <div className='green-star-upper'/>
+          <div className={prodStyles['footer-star-container']}>
+              <div className={styles['green-star-lower']}/>
+              <div className={styles['green-star-upper']}/>
           </div>
 
         </div>
