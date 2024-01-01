@@ -168,7 +168,7 @@ export default function Home() {
   useEffect(()=> {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 8000); // Adjust the time as needed, here it's set for 5 seconds
+    }, 5000); // Adjust the time as needed, here it's set for 5 seconds
    
     return () => clearTimeout(timer);
   }, [])
