@@ -17,6 +17,7 @@ import Carousel from './components/Carousel';
 import {motion, AnimatePresence, useScroll,useMotionValueEvent, useAnimation, inView} from 'framer-motion'
 import Faqs from './components/Faqs';
 import NavPane from './components/NavPane';
+import Loading from './components/Loading'
 import { useInView } from 'react-intersection-observer';
 import Lottie, {useLottie} from 'lottie-react';
 import lightningLottie from './components/data/lightningLottie.json';
@@ -33,6 +34,7 @@ export default function Home() {
       return 1024; // or whatever default value you deem appropriate
     }
   });
+  const [loading, setLoading] = useState(true)
   const [screenHeight, setScreenHeight] = useState(0);
   const [signInActive, setSignInActive] = useState(null)
   const [firstRender, setFirstRender] = useState(true)
@@ -163,6 +165,14 @@ export default function Home() {
       }
   };
 
+  useEffect(()=> {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 8000); // Adjust the time as needed, here it's set for 5 seconds
+   
+    return () => clearTimeout(timer);
+  }, [])
+
   // unused, does nothing but detect scroll
   
 
@@ -220,10 +230,13 @@ export default function Home() {
         <title>BLACKPRINT</title>
         <link rel="icon" href="/assets/logo.png" />
       </Head>
+      {(loading)&&
+        <Loading/>
+      }
 
 
       <main className={styles['main-content-v2']} id="main" ref={scrollRef}>
-      { (screenWidth>480)&&
+      { (screenWidth>480 && !loading)&&
       <Navbar authenticated={isAuthenticated} screenWidth={screenWidth} inView={topInView} bottomInView={bottomInView} isActive={isActive} firstRender={firstRender} onHandleScroll={(id)=>handleButtonClick(id)} onHandleLogin={()=>handleSignIn("login")} onHandlePane={()=>handlePane()}/>
       }
 

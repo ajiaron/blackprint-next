@@ -442,7 +442,22 @@ transform: translateY(-2rem);
   overflow: hidden;
 }
 
+.loading-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  justify-content: center;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.print-icon-v2 {
+  filter: invert(1);
+  transform: scale(.5);  
 
+}
 
 @media screen and (max-width: 480px) {
    
