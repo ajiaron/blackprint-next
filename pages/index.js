@@ -223,11 +223,33 @@ export default function Home() {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, []);
-
+    function gtag() {
+    dataLayer.push(arguments)
+    }
   return (
     <>
       <Head>
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-5NKX30F5Z3"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-5NKX30F5Z3');
+            `,
+          }}
+        />
         <title>BLACKPRINT</title>
+        <meta charset="utf-8"></meta>
+        <meta itemprop="name" content="blackprint"></meta>
+        <meta itemprop="description" content="Welcome to Blackprint! We are a creative design agency aiming to provide outstanding visuals for websites, mobile apps, and any other projects you may have. We thank you for your support and visting us!">
+        </meta>
+        <meta itemprop="url" content="https://www.blackprint.in/"></meta>
         <link rel="icon" href="/assets/logo.png" />
       </Head>
       {(loading)&&
