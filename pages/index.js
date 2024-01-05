@@ -251,7 +251,7 @@ export default function Home() {
             "@context": "http://schema.org",
             "@type": "WebPage",
             "name": "BLACKPRINT",
-            "description": "Welcome to Blackprint! We are a creative design agency ...",
+            "description": "Welcome to Blackprint! We are a creative design agency aiming to provide outstanding visuals for websites, mobile apps, and any other projects you may have. We thank you for your support and visting us!",
             "url": "https://www.blackprint.in/"
           }) }}
         />
