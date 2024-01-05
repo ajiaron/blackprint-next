@@ -8,22 +8,22 @@ const PackageV2 = ({type, value, plan, onHandleBooking}) => {
     const handlePayment = (type) => {
         if (env === "development") {
             if (type==="startup") {
-                window.location.href = `https://book.stripe.com/test_6oE8wC0Jn03E8dW8wy`
+                window.location.href = `https://book.stripe.com/test_bIY3ci4ZD7w60Lu5kt`
             }
             else if (type==="standard") {
-                window.location.href= `https://buy.stripe.com/test_5kA28efEh7w651K144`
+                window.location.href= `https://buy.stripe.com/test_7sIdQW9fT3fQ65O6ov`
             } else {
-                window.location.href = `https://buy.stripe.com/test_dR6cMS3Vz03EgKs6ou`
+                window.location.href = `https://buy.stripe.com/test_aEU3ci0Jn2bMdygbIQ`
             }
         } else {
    
             if (type==="startup") {
-                window.location.href = `https://book.stripe.com/cN25kR2FP9MubIscMM`
+                window.location.href = `https://book.stripe.com/5kA9B7gwF1fY3bW5kr`
             }
             else if (type==="standard") {
-                window.location.href = `https://buy.stripe.com/7sI8x3fsB2k27scbIK`
+                window.location.href = `https://buy.stripe.com/28o5kR0xHcYGfYI7sB`
             } else {
-                window.location.href= `https://buy.stripe.com/dR6cNj1BL6AieUE6ou`
+                window.location.href= `https://buy.stripe.com/bIY5kR2FP2k29AkeV2`
             }
         }
     }
@@ -55,8 +55,8 @@ const PackageV2 = ({type, value, plan, onHandleBooking}) => {
                         <div className={styles['package-pro-icon-v2']}/>:null
                     }
                         <p className={styles['package-header-v2']}
-                        style={{textShadow: (type==="startup")?
-                            "-5px 1px 23px rgba(255, 255, 255, 0.70)":"none",
+                        style={{textShadow:
+                            "-5px 1px 23px rgba(255, 255, 255, 0.70)",
                             paddingRight:(type==="standard")?"1.75rem":"0rem"
                         }}>
                             {(type==="startup")?'brand start-up':type}
