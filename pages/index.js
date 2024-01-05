@@ -250,6 +250,9 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "http://schema.org",
             "@type": "WebPage",
+            "name": "BLACKPRINT",
+            "description": "Welcome to Blackprint! We are a creative design agency ...",
+            "url": "https://www.blackprint.in/"
           }) }}
         />
         <title>BLACKPRINT</title>
