@@ -244,6 +244,14 @@ export default function Home() {
             `,
           }}
         />
+         {/* Schema.org metadata */}
+         <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "WebPage",
+          }) }}
+        />
         <title>BLACKPRINT</title>
         <meta charset="utf-8"></meta>
         <meta itemprop="name" content="blackprint"></meta>
