@@ -244,6 +244,8 @@ export default function Home() {
             `,
           }}
         />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6642071577759299"
+     crossorigin="anonymous"></script>
          {/* Schema.org metadata */}
          <script
           type="application/ld+json"
