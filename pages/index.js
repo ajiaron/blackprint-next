@@ -20,6 +20,7 @@ import NavPane from './components/NavPane';
 import Loading from './components/Loading'
 import { useInView } from 'react-intersection-observer';
 import Lottie, {useLottie} from 'lottie-react';
+import { Analytics } from '@vercel/analytics/react';
 import lightningLottie from './components/data/lightningLottie.json';
 
 
@@ -265,6 +266,7 @@ export default function Home() {
         <meta itemprop="url" content="https://www.blackprint.in/"></meta>
         <link rel="icon" href="/assets/logo.png" />
       </Head>
+      <Analytics/>
       {(loading)&&
         <Loading/>
       }
