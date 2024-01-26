@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from '../styles/V2.module.scss'
 import style from '../styles/App.module.scss'
 import faqsStyles from '../styles/Faqs.module.scss'
@@ -258,6 +259,15 @@ export default function Home() {
             "url": "https://www.blackprint.in/"
           }) }}
         />
+        <script
+        dangerouslySetInnerHTML={{ __html: `
+            window.addEventListener('scroll', function() {
+                var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+                window.parent.postMessage({ type: 'scroll', scrollPosition: scrollPosition }, '*');
+            });`
+          }}/>
+        
+
         <title>BLACKPRINT</title>
         <meta charset="utf-8"></meta>
         <meta itemprop="name" content="blackprint"></meta>
@@ -265,6 +275,7 @@ export default function Home() {
         </meta>
         <meta itemprop="url" content="https://www.blackprint.in/"></meta>
         <link rel="icon" href="/assets/logo.png" />
+        
       </Head>
       <Analytics/>
       {(loading)&&
