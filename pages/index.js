@@ -259,14 +259,20 @@ export default function Home() {
             "url": "https://www.blackprint.in/"
           }) }}
         />
-        <script
+
+    <script
         dangerouslySetInnerHTML={{ __html: `
-            window.addEventListener('scroll', function() {
-                var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-                window.parent.postMessage({ type: 'scroll', scrollPosition: scrollPosition }, '*');
-            });`
-          }}/>
-        
+            document.addEventListener('DOMContentLoaded', function() {
+                var links = document.querySelectorAll('a');
+                links.forEach(function(link) {
+                    link.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        window.parent.location.href = this.href;
+                    });
+                });
+            });
+        `}}
+    />
 
         <title>BLACKPRINT</title>
         <meta charset="utf-8"></meta>
