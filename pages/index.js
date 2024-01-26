@@ -259,21 +259,7 @@ export default function Home() {
             "url": "https://www.blackprint.in/"
           }) }}
         />
-
-    <script
-        dangerouslySetInnerHTML={{ __html: `
-            document.addEventListener('DOMContentLoaded', function() {
-                var links = document.querySelectorAll('a');
-                links.forEach(function(link) {
-                    link.addEventListener('click', function(event) {
-                        event.preventDefault();
-                        window.parent.location.href = this.href;
-                    });
-                });
-            });
-        `}}
-    />
-
+          <base target="_parent"></base>
         <title>BLACKPRINT</title>
         <meta charset="utf-8"></meta>
         <meta itemprop="name" content="blackprint"></meta>
@@ -316,7 +302,7 @@ export default function Home() {
               <div style={{position:"relative"}}>
                 <span className={styles["header-icon-v2"]}/>
               </div>
-              <div className={styles["header-text-wrapper"]} style={{display:"flex", gap:`${(screenWidth<480)?".25rem":".5rem"}`, marginLeft:"auto", marginRight:"auto"}}>
+              <a className={styles["header-text-wrapper"]} href="/" style={{display:"flex", gap:`${(screenWidth<480)?".25rem":".5rem"}`, marginLeft:"auto", marginRight:"auto"}}>
                 <p className={styles["header-text-alt"]}>
                   BLACK
                 </p>
@@ -329,7 +315,7 @@ export default function Home() {
                 </p>
                 <span className={styles["header-text-icon"]} />
 
-              </div>
+              </a>
               { (screenWidth<=480)&&
                <Navbar authenticated={isAuthenticated} screenWidth={screenWidth} inView={topInView} bottomInView={bottomInView} isActive={isActive} firstRender={firstRender} onHandleScroll={(id)=>handleButtonClick(id)} onHandleLogin={()=>handleSignIn("login")} onHandlePane={()=>handlePane()}/>
               }
