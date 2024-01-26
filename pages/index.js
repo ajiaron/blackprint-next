@@ -302,7 +302,7 @@ export default function Home() {
               <div style={{position:"relative"}}>
                 <span className={styles["header-icon-v2"]}/>
               </div>
-              <a className={styles["header-text-wrapper"]} href="www.truka.com" style={{display:"flex", gap:`${(screenWidth<480)?".25rem":".5rem"}`, marginLeft:"auto", marginRight:"auto", textDecoration:"none"}}>
+              <a className={styles["header-text-wrapper"]} href="https://www.truka.com" style={{display:"flex", gap:`${(screenWidth<480)?".25rem":".5rem"}`, marginLeft:"auto", marginRight:"auto", textDecoration:"none"}}>
                 <p className={styles["header-text-alt"]}>
                   BLACK
                 </p>
