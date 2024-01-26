@@ -259,7 +259,7 @@ export default function Home() {
             "url": "https://www.blackprint.in/"
           }) }}
         />
-          <base target="_parent"></base>
+        
         <title>BLACKPRINT</title>
         <meta charset="utf-8"></meta>
         <meta itemprop="name" content="blackprint"></meta>
@@ -302,7 +302,7 @@ export default function Home() {
               <div style={{position:"relative"}}>
                 <span className={styles["header-icon-v2"]}/>
               </div>
-              <a className={styles["header-text-wrapper"]} href="https://www.truka.com" style={{display:"flex", gap:`${(screenWidth<480)?".25rem":".5rem"}`, marginLeft:"auto", marginRight:"auto", textDecoration:"none"}}>
+              <div className={styles["header-text-wrapper"]} style={{display:"flex", gap:`${(screenWidth<480)?".25rem":".5rem"}`, marginLeft:"auto", marginRight:"auto"}}>
                 <p className={styles["header-text-alt"]}>
                   BLACK
                 </p>
@@ -315,7 +315,7 @@ export default function Home() {
                 </p>
                 <span className={styles["header-text-icon"]} />
 
-              </a>
+              </div>
               { (screenWidth<=480)&&
                <Navbar authenticated={isAuthenticated} screenWidth={screenWidth} inView={topInView} bottomInView={bottomInView} isActive={isActive} firstRender={firstRender} onHandleScroll={(id)=>handleButtonClick(id)} onHandleLogin={()=>handleSignIn("login")} onHandlePane={()=>handlePane()}/>
               }
