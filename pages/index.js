@@ -389,7 +389,7 @@ export default function Home() {
           </p>
         </div>
           <div className={styles["header-subtext-container-v2"]}>
-              UNLIMITED BRANDING, MARKETING, AND DESIGN NEEDS.
+          {`${screenWidth} ${screenHeight}`} 
           </div>
 
       </section>
