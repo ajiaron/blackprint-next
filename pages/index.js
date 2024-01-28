@@ -262,6 +262,7 @@ export default function Home() {
         
         <title>BLACKPRINT</title>
         <meta charset="utf-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <meta itemprop="name" content="blackprint"></meta>
         <meta itemprop="description" content="Welcome to Blackprint! We are a creative design agency aiming to provide outstanding visuals for websites, mobile apps, and any other projects you may have. We thank you for your support and visting us!">
         </meta>
@@ -612,10 +613,12 @@ export default function Home() {
           </div>
 
           <Products/>
+          {(screenWidth>480)&&
           <div className={prodStyles['footer-star-container']}>
               <div className={styles['green-star-lower']}/>
               <div className={styles['green-star-upper']}/>
           </div>
+          }
 
         </div>
       </section>

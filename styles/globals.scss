@@ -516,21 +516,23 @@ transform: translateY(-2rem);
        // background-color: red;
         flex-direction: column;
       }
-      &:nth-of-type(3) {
+      &:nth-of-type(3) { // products
         width: 100vw;
         max-width: 100vw;
-        min-height: 215vh;
-        max-height: 215vh;
-
+        min-height: fit-content;
+        max-height: fit-content;
+        height: fit-content;
      //   max-height: fit-content;
        // background-color: green;
         display: flex;
         flex-direction: column;
       }
-      &:nth-of-type(4) {
+      &:nth-of-type(4) { // packages
         width: 100vw;
         max-width: 100vw;
-        min-height: 210vh;
+      //  min-height: 210vh;
+      min-height: fit-content;
+      max-height: fit-content;
        // background-color: green;
         display: flex;
         flex-direction: column;
