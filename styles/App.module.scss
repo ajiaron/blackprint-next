@@ -499,12 +499,14 @@ transform: translateY(-2rem);
     max-width: 100vw;
    // min-height: 57vh;
    // max-height: 57vh;
+   align-items: flex-start;
+
 
     min-height: fit-content;
     max-height: fit-content;
-    margin-top: 1rem;
+    padding-top: 3.5rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     padding-bottom: 4rem;
   }
   .calender-content {
@@ -555,6 +557,7 @@ transform: translateY(-2rem);
     height: fit-content;
     overflow-y: scroll;
     display: flex;
+  
     overflow-x:hidden;
     flex-direction: column;
     justify-content: flex-start;
