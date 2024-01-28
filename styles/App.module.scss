@@ -486,11 +486,12 @@ transform: translateY(-2rem);
   .products-content {
     width: 100vw;
    // max-width: 100vw;
-  
+   margin-top: 1.5rem;
 
    // max-height: 100vh;
     min-height: fit-content;
     max-height: fit-content;
+
     display: flex;
     flex-direction: column;
   }
@@ -504,7 +505,8 @@ transform: translateY(-2rem);
 
     min-height: fit-content;
     max-height: fit-content;
-    padding-top: 3.5rem;
+    margin-top: 0;
+    padding-top: 0;
     display: flex;
     justify-content: flex-start;
     padding-bottom: 4rem;
