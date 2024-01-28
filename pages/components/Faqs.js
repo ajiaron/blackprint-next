@@ -25,7 +25,7 @@ const Faqs = ({topic, info, index, screenWidth, onHandleClose, onHandleOpen}) =>
     return (
         <span className={styles[`faqs-content-item`]}
         onClick={()=>handleOpen()}>
-            <div style={{display:"flex", width:"100%", alignItems:"center", paddingTop:(screenWidth>480)?"2.125rem":(index===1)?"1.5rem":"2.125rem"}}>
+            <div style={{display:"flex", width:"100%", alignItems:"center", paddingTop:(screenWidth>480)?"2.125rem":(index===4)?"1.5rem":(index===1)?"1.5rem":"2.125rem"}}>
                 <p className={styles['faqs-content-item-text']}>
                     {topic}
                 </p>
@@ -61,7 +61,7 @@ const Faqs = ({topic, info, index, screenWidth, onHandleClose, onHandleOpen}) =>
                    damping:30,
                    duration:.1
                  }}>
-                    <motion.div style={{display:"flex", minWidth:"100%", alignItems:"center", height:"90%", paddingLeft:"0rem"}}
+                    <motion.div style={{display:"flex", minWidth:"100%", alignItems:"center", height:(screenWidth>480)?"90%":"100%", paddingLeft:"0rem"}}
                      initial={{opacity:0}}
                         animate={{opacity:1}}
                         transition={{

@@ -597,8 +597,10 @@ transform: translateY(-2rem);
       &:nth-of-type(3) {
         width: 100vw;
         max-width: 100vw;
-        min-height: 225vh;
-        max-height: 225vh;
+      //  min-height: 225vh;
+       // max-height: 225vh;
+        min-height: fit-content;
+        max-height: fit-content;
      //   max-height: fit-content;
        // background-color: green;
         display: flex;

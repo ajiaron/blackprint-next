@@ -294,7 +294,7 @@ export default function Home() {
       }
       <div className={`main-content-container ${!isActive?(!firstRender)?'inactive-landing-container':'dim-landing-container':(!firstRender)?'active-container':''}`}>
 
-        <section className={"landing-content"} id={"landing"}>
+        <section className={style["landing-content"]} id={"landing"}>
           <div style={{marginRight:"auto", marginLeft:"auto", position:"relative"}}>
             <div className={styles["hero-wrapper-v2"]}/>
           </div>
@@ -404,7 +404,7 @@ export default function Home() {
         
       </div>
       }
-      <section className={"proposition-content"} id={"proposition"}>
+      <section className={style["proposition-content"]} id={"proposition"}>
         <div className={propStyles["proposition-header"]}>
           <div className={styles["proposition-header-container-v2"]}>
             <p className={styles["proposition-header-text-v2"]}  style={{display:"inline", fontWeight:"400"}}>
@@ -575,7 +575,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={'products-content'} id="products">
+      <section className={style['products-content']} id="products">
         <div className={prodStyles['products-content-container']}>
           <div className={prodStyles['products-header-container']}>
             {(screenWidth>480)&&
@@ -630,7 +630,7 @@ export default function Home() {
       </div>
       }
       
-      <section className={"package-content"} id={"packages"}>
+      <section className={style["package-content"]} id={"packages"}>
         <div className={styles["proposition-header-container-v2"]}>
           <p className={styles['proposition-header-text-v2']} style={{display:"inline"}}>
             SO{''}...{' '}WHAT DO WE&nbsp;
@@ -656,7 +656,7 @@ export default function Home() {
         damping:30,
         duration:.15
       }}
-        className='faqs-content' id="faqs">
+        className={style['faqs-content']} id="faqs">
         <motion.div className={faqsStyles['faqs-content-container']}
         initial={{opacity:0, y:50}}
         viewport={{once:true}}

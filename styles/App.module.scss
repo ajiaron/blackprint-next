@@ -95,6 +95,8 @@ src: url('../public/fonts/Gardenia Summer.ttf') format('truetype');
   width: 100vw;
   max-width: 100vw;
   max-height: 100vh;
+
+ // height: fit-content;
   display: flex;
   flex-direction: column;
 }
@@ -460,6 +462,77 @@ transform: translateY(-2rem);
 }
 
 @media screen and (max-width: 480px) {
+
+  .landing-content {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100vh;
+    min-height: fit-content;
+   // background-color: #040F08;
+    //background: linear-gradient(180deg, #040F08, #0C0706);
+   // background-color: red;
+    display: flex;
+    flex-direction: column;
+  }
+  .proposition-content {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100vh;
+
+   // height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+  .products-content {
+    width: 100vw;
+   // max-width: 100vw;
+   margin-top: 1.5rem;
+
+   // max-height: 100vh;
+    min-height: fit-content;
+    max-height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+  .package-content {
+    width: 100vw;
+    max-width: 100vw;
+   // min-height: 57vh;
+   // max-height: 57vh;
+
+    min-height: fit-content;
+    max-height: fit-content;
+    
+    display: flex;
+    justify-content: center;
+    padding-bottom: 4rem;
+  }
+  .calender-content {
+    width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 8.8rem;
+  }
+  .faqs-content {
+    width: 100vw;
+    max-width: 100vw;
+   // height: auto;
+   // min-height: 35.3125rem;
+   // max-height: 35.3125rem;
+   height: auto;
+   min-height: fit-content;
+   max-height: fit-content;
+    margin-bottom: 5rem;
+   // background-color: red;
+    display: flex;
+    align-items: center;
+  }
+  
+
+
   .loading-container {
     width: 100vw;
     height: 100vh;
@@ -488,6 +561,7 @@ transform: translateY(-2rem);
     align-items: center;
     
     section {
+
       flex:none;
       display: flex;
       flex-direction: column;
@@ -515,8 +589,10 @@ transform: translateY(-2rem);
       &:nth-of-type(3) {
         width: 100vw;
         max-width: 100vw;
+
         min-height: 215vh;
         max-height: 215vh;
+        
      //   max-height: fit-content;
        // background-color: green;
         display: flex;
@@ -596,6 +672,7 @@ transform: translateY(-2rem);
       }
       &:nth-of-type(3) {
         width: 100vw;
+
         max-width: 100vw;
         min-height: 225vh;
         max-height: 225vh;
