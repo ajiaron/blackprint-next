@@ -498,14 +498,18 @@ transform: translateY(-2rem);
         width: 100vw;
         max-width: 100vw;
         min-height: fit-content;
-        min-height: 56vh;
+        min-height:56vh;
         display: flex;
+
         flex-direction: column;
       }
       &:nth-of-type(2) {
         width: 100vw;
        // max-width: 100vw;
-        min-height: 175vh;
+      //  min-height: 175vh;
+        min-height: fit-content;
+        max-height: fit-content;
+
 
         display: flex;
         height: fit-content;
@@ -517,6 +521,7 @@ transform: translateY(-2rem);
         max-width: 100vw;
         min-height: 215vh;
         max-height: 215vh;
+
      //   max-height: fit-content;
        // background-color: green;
         display: flex;
