@@ -489,8 +489,10 @@ transform: translateY(-2rem);
    margin-top: 1.5rem;
 
    // max-height: 100vh;
+
     min-height: fit-content;
     max-height: fit-content;
+    padding-bottom: 0em;
 
     display: flex;
     flex-direction: column;
@@ -498,8 +500,8 @@ transform: translateY(-2rem);
   .package-content {
     width: 100vw;
     max-width: 100vw;
-   // min-height: 57vh;
-   // max-height: 57vh;
+  //  min-height: 57vh;
+  //  max-height: 57vh;
    align-items: flex-start;
 
 
@@ -594,7 +596,7 @@ transform: translateY(-2rem);
       &:nth-of-type(3) {
         width: 100vw;
         max-width: 100vw;
-
+        
         min-height: 215vh;
         max-height: 215vh;
         
