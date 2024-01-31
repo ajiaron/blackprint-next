@@ -33,7 +33,7 @@ export default function Home() {
       // Client-side, window is available
       return window.innerWidth;
     } else {
-      return 1024; // or whatever default value you deem appropriate
+      return 1024; 
     }
   });
   const [loading, setLoading] = useState(true)
@@ -170,7 +170,7 @@ export default function Home() {
   useEffect(()=> {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5000); // Adjust the time as needed, here it's set for 5 seconds
+    }, 3500); // Adjust the time as needed, here it's set for 5 seconds
    
     return () => clearTimeout(timer);
   }, [])
