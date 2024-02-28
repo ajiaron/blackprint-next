@@ -644,9 +644,9 @@ export default function Home() {
 
         </div>
         <motion.div className={packStyles["package-content-container"]}>
-          <PackageV2 type={'standard'} value={600} plan={'month'} onHandleBooking={()=>(screenWidth>480)?handleBooking():navigateBooking()}/>
-          <PackageV2 type={'pro'} value={700} plan={'month'} onHandleBooking={()=>(screenWidth>480)?handleBooking():navigateBooking()}/>
-          <PackageV2 type={'startup'} value={800} plan={'once'} onHandleBooking={()=>(screenWidth>480)?handleBooking():navigateBooking()}/>
+          <PackageV2 type={'standard'} value={600} plan={'month'} onHandleBooking={()=>navigateBooking()}/>
+          <PackageV2 type={'pro'} value={700} plan={'month'} onHandleBooking={()=>navigateBooking()}/>
+          <PackageV2 type={'startup'} value={800} plan={'once'} onHandleBooking={()=>navigateBooking()}/>
         </motion.div>
       </section>
 
