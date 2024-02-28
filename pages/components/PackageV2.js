@@ -4,6 +4,10 @@ import Button from './Button';
 import {motion, AnimatePresence, useScroll, useAnimation} from 'framer-motion'
 
 const PackageV2 = ({type, value, plan, onHandleBooking}) => {
+    const handleInquiry = () => {
+        window.location.href =  'mailto:info@blackprint.in';
+       // e.preventDefault();
+    }
     const env = process.env.REACT_APP_ENV
     const handlePayment = (type) => {
         if (env === "development") {
@@ -64,15 +68,19 @@ const PackageV2 = ({type, value, plan, onHandleBooking}) => {
                         {(type==="pro")?
                         <div className={styles['package-pro-icon-alt-v2']}/>:
                         (type==="startup")?
+                        
                         <div className={styles['package-startup-label-v2']}>
+                            {/*
                             <div className={styles['package-startup-label-text-v2']}>
                                 most popular!
                             </div>
+                            */}
                         </div>:null
                         }
                     </div>
-                    <p className={styles['package-listing-header-v2']}>
-                        {`$${value}${plan==='once'?' once':'/'+plan}`}
+                    <p className={styles['package-listing-header-v2']} style={{transform:"translateY(2px)"}}>
+                        Contact for pricing
+                        {/*`$${value}${plan==='once'?' once':'/'+plan}`*/}
                     </p>
                 </div>
 
@@ -124,7 +132,8 @@ const PackageV2 = ({type, value, plan, onHandleBooking}) => {
                  onHandlePayment={()=>handlePayment(type)}
                  onHandleBooking={()=>onHandleBooking()}/>
                 <Button type="package"
-                 onHandlePayment={()=>handlePayment(type)}
+               //  onHandlePayment={()=>handlePayment(type)}
+                 onHandlePayment={(e)=>handleInquiry(e)}
                  onHandleBooking={()=>onHandleBooking()}/>
             </div>
         </div>
