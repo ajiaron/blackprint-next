@@ -24,6 +24,58 @@ import Lottie, {useLottie} from 'lottie-react';
 import { Analytics } from '@vercel/analytics/react';
 import lightningLottie from './components/data/lightningLottie.json';
 
+const DrawingCanvas = () => {
+  const canvasRef = useRef(null);
+  const [isDrawing, setIsDrawing] = useState(false);
+
+  const startDrawing = ({ nativeEvent }) => {
+    const { offsetX, offsetY } = nativeEvent;
+    const ctx = canvasRef.current.getContext('2d');
+    ctx.beginPath();
+    ctx.moveTo(offsetX, offsetY);
+    setIsDrawing(true);
+  };
+
+  const draw = ({ nativeEvent }) => {
+    if (!isDrawing) {
+      return;
+    }
+    const { offsetX, offsetY } = nativeEvent;
+    const ctx = canvasRef.current.getContext('2d');
+    ctx.strokeStyle = "#42cc00";
+    ctx.lineWidth = 2;
+
+
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.lineTo(offsetX, offsetY);
+    ctx.stroke();
+  };
+
+  const stopDrawing = () => {
+    const ctx = canvasRef.current.getContext('2d');
+    ctx.closePath();
+    setIsDrawing(false);
+  };
+
+  // Resize canvas
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      onMouseDown={startDrawing}
+      onMouseMove={draw}
+      onMouseUp={stopDrawing}
+      onMouseOut={stopDrawing}
+      style={{ border: 'none', position:"absolute", zIndex:998}}
+    />
+  );
+};
 
 export default function Home() {
   const scrollRef = useRef(null)
@@ -296,6 +348,11 @@ export default function Home() {
       <div className={`main-content-container ${!isActive?(!firstRender)?'inactive-landing-container':'dim-landing-container':(!firstRender)?'active-container':''}`}>
 
         <section className={style["landing-content"]} id={"landing"}>
+         <div style={{position:"relative"}}>
+         <DrawingCanvas/>
+         </div>
+
+       
           <div style={{marginRight:"auto", marginLeft:"auto", position:"relative"}}>
             <div className={styles["hero-wrapper-v2"]}/>
           </div>
