@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/V2.module.scss'
-import style from '../styles/App.module.scss'
+//import style from '../styles/App.module.scss'
 import faqsStyles from '../styles/Faqs.module.scss'
 import packStyles from '../styles/Packages.module.scss'
 import prodStyles from '../styles/Products.module.scss'
@@ -347,10 +347,13 @@ export default function Home() {
       }
       <div className={`main-content-container ${!isActive?(!firstRender)?'inactive-landing-container':'dim-landing-container':(!firstRender)?'active-container':''}`}>
 
-        <section className={style["landing-content"]} id={"landing"}>
+        <section className={styles["landing-content"]} id={"landing"}>
+          {// for drawing
+          /*
          <div style={{position:"relative"}}>
          <DrawingCanvas/>
-         </div>
+         </div>*/
+          }
 
        
           <div style={{marginRight:"auto", marginLeft:"auto", position:"relative"}}>
@@ -462,7 +465,7 @@ export default function Home() {
         
       </div>
       }
-      <section className={style["proposition-content"]} id={"proposition"}>
+      <section className={styles["proposition-content"]} id={"proposition"}>
         <div className={propStyles["proposition-header"]}>
           <div className={styles["proposition-header-container-v2"]}>
             <p className={styles["proposition-header-text-v2"]}  style={{display:"inline", fontWeight:"400"}}>
@@ -633,7 +636,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={style['products-content']} id="products">
+      <section className={styles['products-content']} id="products">
         <div className={prodStyles['products-content-container']}>
           <div className={prodStyles['products-header-container']}>
             {(screenWidth>480)&&
@@ -690,7 +693,7 @@ export default function Home() {
       </div>
       }
       
-      <section className={style["package-content"]} id={"packages"}>
+      <section className={styles["package-content"]} id={"packages"}>
         <div className={styles["proposition-header-container-v2"]}>
           <p className={styles['proposition-header-text-v2']} style={{display:"inline"}}>
             SO{''}...{' '}WHAT DO WE&nbsp;
@@ -716,7 +719,7 @@ export default function Home() {
         damping:30,
         duration:.15
       }}
-        className={style['faqs-content']} id="faqs">
+        className={styles['faqs-content']} id="faqs">
         <motion.div className={faqsStyles['faqs-content-container']}
         initial={{opacity:0, y:50}}
         viewport={{once:true}}

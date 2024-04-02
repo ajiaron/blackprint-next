@@ -19,9 +19,57 @@ src: url('../public/fonts/Gardenia Summer.ttf') format('truetype');
    //background-color: ;
   // background: linear-gradient(180deg, red, blue);
    background-color: #0C0706;
-   cursor: url('../public/assets/cursor9.png'), auto;
+ //  cursor: url('../public/assets/cursor9.png'), auto;
   
   }
+  .landing-content {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100vh;
+    min-height: fit-content;
+   // background-color: #040F08;
+    //background: linear-gradient(180deg, #040F08, #0C0706);
+   // background-color: red;
+    display: flex;
+    flex-direction: column;
+  }
+  .proposition-content {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100vh;
+  
+   // height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+  .products-content {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .package-content {
+    width: 100vw;
+    max-width: 100vw;
+    min-height: 57vh;
+    max-height: 57vh;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10rem;
+  }
+  .faqs-content {
+    width: 100vw;
+    max-width: 100vw;
+   // height: auto;
+   // min-height: 35.3125rem;
+   // max-height: 35.3125rem;
+    margin-bottom: 5rem;
+   // background-color: red;
+    display: flex;
+    align-items: center;
+  }
+  
 .hero-wrapper-v2 {
     //min-width: 92vw;
     //min-height: 92vh;
@@ -1057,6 +1105,72 @@ transform: translateY(-2rem);
    background-color: #0C0706;
   
   }
+  .landing-content {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100vh;
+    min-height: fit-content;
+   // background-color: #040F08;
+    //background: linear-gradient(180deg, #040F08, #0C0706);
+   // background-color: red;
+    display: flex;
+    flex-direction: column;
+  }
+  .proposition-content {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100vh;
+  
+   // height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+  .products-content {
+    width: 100vw;
+   // max-width: 100vw;
+   margin-top: 2rem;
+
+   // max-height: 100vh;
+
+    min-height: fit-content;
+    max-height: fit-content;
+    padding-bottom: 0em;
+
+    display: flex;
+    flex-direction: column;
+  }
+  .package-content {
+    width: 100vw;
+    max-width: 100vw;
+  //  min-height: 57vh;
+  //  max-height: 57vh;
+   align-items: flex-start;
+
+    margin-top: 2rem;
+    min-height: fit-content;
+    max-height: fit-content;
+
+    padding-top: 0;
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 4rem;
+  }
+  .faqs-content {
+    width: 100vw;
+    max-width: 100vw;
+   // height: auto;
+   // min-height: 35.3125rem;
+   // max-height: 35.3125rem;
+   height: auto;
+   min-height: fit-content;
+   max-height: fit-content;
+    margin-bottom: 5rem;
+   // background-color: red;
+    display: flex;
+    align-items: center;
+  }
+  
+
 .hero-wrapper-v2 {
     //min-width: 92vw;
     //min-height: 92vh;
